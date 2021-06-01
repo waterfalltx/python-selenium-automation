@@ -8,5 +8,5 @@ Feature: User can search for solutions
   Scenario: User can search for solutions of Cancelling an order on Amazon
     Given Open amazon help page
     When Input Cancel order in search field
-    And Click on amazon search icon
+
     Then Verify help search work

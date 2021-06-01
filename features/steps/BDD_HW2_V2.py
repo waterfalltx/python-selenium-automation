@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.common.keys import Keys
 
 @given ('Open amazon help page')
 def open_amazon_help_page(context):
@@ -7,11 +8,8 @@ def open_amazon_help_page(context):
 
 @when ('Input Cancel order in search field')
 def help_search_amazon(context):
-    context.driver.find_element(By.ID, 'helpsearch').send_keys('Cancel order')
+    context.driver.find_element(By.ID, 'helpsearch').send_keys('Cancel order', Keys.ENTER)
 
-@when ('Click on amazon help search icon')
-def clicking(context):
-    context.driver.find_element(By.CSS_SELECTOR, "i.a-icon.a-icon-search").click()
 
 @then ('Verify help search work')
 def search_work_verification(context):
